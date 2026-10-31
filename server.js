@@ -1,3 +1,4 @@
+try { process.loadEnvFile(); } catch {}
 const express = require("express");
 const path = require("path");
 const { PDFParse } = require("pdf-parse");
