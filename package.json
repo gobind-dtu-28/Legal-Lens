@@ -4,8 +4,8 @@
   "description": "Legal Lens - AI that explains legal documents in plain Hindi/English and flags risky clauses, powered by Gemma 4 via the Gemini API",
   "main": "server.js",
   "scripts": {
-    "start": "vite build && node --env-file=.env server.js",
-    "server": "node --env-file=.env server.js",
+    "start": "vite build && node server.js",
+    "server": "node server.js",
     "dev": "vite",
     "build": "vite build"
   },
