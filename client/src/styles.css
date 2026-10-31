@@ -1,0 +1,65 @@
+:root{--paper:#e6ede7;--sheet:#fcfdfb;--ink:#12241c;--muted:#4b6055;--line:#c3d0c6;--accent:#0d5c4b;--on:#f3fbf6;--high:#b42318;--med:#a85a00;--low:#17794c}
+  @media (prefers-color-scheme:dark){:root{--paper:#0f1a15;--sheet:#16251d;--ink:#e4efe8;--muted:#9bb0a3;--line:#2a4034;--accent:#5fd0a8;--on:#06231a;--high:#ff8f80;--med:#f0b45a;--low:#5fd0a8}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 Mukta,"Noto Sans Devanagari",system-ui,sans-serif}
+  .wrap{max-width:1000px;margin:0 auto;padding:20px 20px 90px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0 30px}
+  .brand{display:flex;align-items:center;gap:10px;font:800 1.4rem "Bricolage Grotesque",Mukta,sans-serif;letter-spacing:-.02em}
+  .brand svg{color:var(--accent)}
+  .hero{max-width:740px;margin-bottom:28px}
+  h1{font:800 clamp(2.1rem,5.4vw,3.5rem)/1.04 "Bricolage Grotesque",Mukta,sans-serif;letter-spacing:-.03em;margin:0 0 14px}
+  h2{font:700 1.15rem "Bricolage Grotesque",Mukta,sans-serif;margin:0 0 10px;letter-spacing:-.01em}
+  .tag{color:var(--muted);font-size:.95rem}
+  .panel{background:var(--sheet);border:1px solid var(--line);border-radius:6px;padding:20px;margin-bottom:24px;box-shadow:0 1px 0 var(--line)}
+  .panel.drag{outline:3px dashed var(--accent);outline-offset:4px}
+  textarea{width:100%;min-height:210px;display:block;border:0;resize:vertical;color:var(--ink);font:inherit;line-height:28px;padding:6px 2px;outline:0;background:linear-gradient(transparent 27px,var(--line) 27px) 0 6px/100% 28px local,var(--sheet)}
+  textarea::placeholder{color:var(--muted)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+  button,.btn{font:700 .95rem Mukta,"Noto Sans Devanagari",system-ui,sans-serif;border:0;border-radius:99px;padding:10px 20px;background:var(--accent);color:var(--on);cursor:pointer;display:inline-block}
+  button.ghost,.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+  button:hover:not(:disabled),.btn:hover{filter:brightness(1.12)} .ghost:hover{border-color:var(--accent)}
+  button:disabled{opacity:.55;cursor:wait}
+  #go{margin-left:auto;padding:12px 28px;font-size:1.02rem}
+  .small{font-size:.8rem;padding:5px 13px}
+  .seg{display:inline-flex;border:1.5px solid var(--line);border-radius:99px;padding:3px;background:var(--sheet)}
+  .seg button{background:transparent;color:var(--muted);padding:5px 15px}
+  .seg button.on{background:var(--accent);color:var(--on)}
+  #preview{max-height:64px;border-radius:4px;border:1px solid var(--line);display:none}
+  .busy::before{content:"";display:inline-block;width:13px;height:13px;margin-right:8px;border:2px solid var(--line);border-top-color:var(--accent);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .err{color:var(--high)} .hidden{display:none}
+  .sheet{background:var(--sheet);border:1px solid var(--line);border-radius:6px;box-shadow:0 1px 0 var(--line),0 18px 34px -26px rgba(0,0,0,.45);margin-bottom:24px}
+  .sheet section{padding:28px;border-top:1px solid var(--line)}
+  .sheet section:first-child{border-top:0}
+  .verdict{display:flex;gap:36px;align-items:center}
+  .stamp{--c:var(--high);flex:none;width:172px;padding:14px 10px;text-align:center;color:var(--c);border:4px double var(--c);border-radius:10px;background:color-mix(in srgb,var(--c) 7%,transparent);transform:rotate(-7deg)}
+  .stamp b{display:block;font:800 3.6rem/1 "Bricolage Grotesque",Mukta,sans-serif;letter-spacing:-.04em}
+  .stamp b::after{content:"/100";font-size:.95rem;font-weight:600;letter-spacing:0;margin-left:3px}
+  .stamp span{display:block;margin-top:6px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;font-size:.95rem;line-height:1.2}
+  .stamp.slam{animation:slam .55s cubic-bezier(.2,.8,.3,1)}
+  @keyframes slam{0%{transform:rotate(-15deg) scale(1.8);opacity:0}60%{transform:rotate(-7deg) scale(.95);opacity:1}100%{transform:rotate(-7deg) scale(1)}}
+  @media (prefers-reduced-motion:reduce){.stamp.slam{animation:none}}
+  #oneLine{font-size:1.65rem;line-height:1.2;margin:4px 0 10px}
+  #plain{margin:10px 0 0;max-width:62ch}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .badge{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:2px 10px;border-radius:99px;color:var(--paper);margin-right:8px}
+  .badge.high{background:var(--high)} .badge.medium{background:var(--med)} .badge.low{background:var(--low)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2px 28px}
+  .fact{padding:10px 0;border-top:1px solid var(--line)}
+  .fact b{display:block;font-weight:600;color:var(--muted);font-size:.85rem}
+  .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:28px}
+  ul{margin:8px 0 0;padding-left:20px} li{margin:5px 0}
+  .clause{--s:var(--med);border-left:5px solid var(--s);padding:2px 0 2px 18px;margin:24px 0}
+  .clause.high{--s:var(--high)} .clause.low{--s:var(--low)}
+  blockquote{display:inline;margin:0;font-weight:600;background:linear-gradient(transparent 58%,color-mix(in srgb,var(--s) 32%,transparent) 58%)}
+  .clause>div{margin-top:6px} .clause>div:first-of-type{margin-top:10px}
+  .rewrite{margin-top:10px;padding:10px 14px;border-left:3px solid var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);white-space:pre-wrap;border-radius:0 6px 6px 0}
+  .chg{border-top:1px solid var(--line);padding:12px 0}
+  .chat-log{max-height:320px;overflow:auto;margin-bottom:12px}
+  .msg{padding:9px 14px;margin:8px 0;max-width:88%;white-space:pre-wrap;border-radius:16px 16px 16px 3px;background:color-mix(in srgb,var(--line) 50%,transparent)}
+  .msg.user{background:var(--accent);color:var(--on);margin-left:auto;border-radius:16px 16px 3px 16px}
+  input[type=text]{flex:1;min-width:200px;background:var(--sheet);color:var(--ink);border:1.5px solid var(--line);border-radius:99px;padding:10px 18px;font:inherit}
+  .disc{color:var(--muted);font-size:.82rem;max-width:70ch}
+  @media (max-width:640px){.verdict{flex-direction:column;align-items:flex-start}.sheet section{padding:20px 18px}#go{width:100%}}
+  @media print{:root{--paper:#fff;--sheet:#fff;--ink:#000;--muted:#444;--line:#ccc;--paper:#fff}.noprint,.clause button,.seg{display:none!important}}
